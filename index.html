@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>현대자동차 - 캐스퍼 소개 홈페이지</title>
+  <!-- 스와이퍼 슬라이드 css 파일 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <!-- css초기화 -->
   <link href="./css/reset.css" rel="stylesheet" type="text/css">
   <!-- 공통서식 -->
@@ -22,6 +24,8 @@
 
   <!-- 제이쿼리 쿠키 -->
   <script src="./script/jquery.cookie.js"></script>
+
+
 </head>
 
 <body>
@@ -80,25 +84,86 @@
       <video muted autoplay loop="infinite">
         <source src="./images/main_KV.webm" type="video/webm">
       </video>
+      <a href="#top3" class="arctic_scroll" id="next_btn">다음 페이지로</a>
     </section>
 
     <!-- 2. 가장 많이 찾는 캐스퍼 top3 -->
-    <section id="top3"></section>
+    <section id="top3">
+      <h2 class="m_title">가장 많이 찾는 캐스퍼</h2>
+      <p class="p01">지금 가장 인기 있는 조합을 확인해 보세요.</p>
+
+      <!-- 스와이퍼 슬라이드 -->
+      <div class="swiper top3">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <span class="rank">1위</span>
+            <h3 class="top3_title">가솔린 1.0 터보 인스퍼레이션</h3>
+            <img src="./images/color_khaki.02b812c.png" alt="카키">
+            <ul class="detail">
+              <li><span class="outer_color kaki">카키</span>외장색상<br>톰보이 카키</li>
+              <li><span class="inner_color black">블랙</span>내장색상<br>블랙</li>
+              <li>선택품목 <br> 캐스퍼 액티브 11</li>
+              <li><em class="price">18,700,000</em>원</li>
+            </ul>
+            <input type="button" value="견적내기 &gt;" class="btn b_btn">
+          </div>
+          <div class="swiper-slide"><span class="rank">2위</span>
+            <h3 class="top3_title">가솔린 The Essential</h3>
+            <img src="./images/color_white.bebc88b.png" alt="화이트">
+            <ul class="detail">
+              <li><span class="outer_color white">화이트</span>외장색상<br>톰보이 화이트</li>
+              <li><span class="inner_color black">블랙</span>내장색상<br>블랙</li>
+              <li>선택품목 <br> 가솔린 The Essential</li>
+              <li><em class="price">16,900,000</em>원</li>
+            </ul>
+            <input type="button" value="견적내기 &gt;" class="btn b_btn">
+          </div>
+
+          <div class="swiper-slide"><span class="rank">3위</span>
+            <h3 class="top3_title">가솔린 1.0 디 에센셜 라이트</h3>
+            <img src="./images/color_orange.0c6edb3.png" alt="오렌지">
+            <ul class="detail">
+              <li><span class="outer_color orange">오렌지</span>외장색상<br>톰보이 오렌지</li>
+              <li><span class="inner_color black">블랙</span>내장색상<br>블랙</li>
+              <li>선택품목 <br> 캐스퍼 액티브 11</li>
+              <li><em class="price">14,900,000</em>원</li>
+            </ul>
+            <input type="button" value="견적내기 &gt;" class="btn b_btn">
+          </div>
+
+        </div>
+        <!-- 콘트롤 버튼 -->
+        <div class="swiper-pagination"></div>
+        <!-- 좌우 버튼 -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
 
     <!-- 3. 소개페이지 -->
-    <section id="intro"></section>
+    <section id="intro">
+      <h2 class="m_title">소개</h2>
+    </section>
 
     <!-- 4. 시승신청 -->
-    <section id="test_drive"></section>
+    <section id="test_drive">
+      <h2 class="m_title">시승신청</h2>
+    </section>
 
     <!-- 5. 이벤트 -->
-    <section id="event"></section>
+    <section id="event">
+      <h2 class="m_title">이벤트 &amp; 프로모션</h2>
+    </section>
 
     <!-- 6. 구매하기 -->
-    <section id="buy"></section>
+    <section id="buy">
+      <h2 class="m_title">캐스퍼 구매 안내</h2>
+    </section>
 
     <!-- 7. 고객지원-->
-    <section id="customer"></section>
+    <section id="customer">
+      <h2 class="m_title">고객지원</h2>
+    </section>
   </main>
 
   <!-- 푸터영역 시작 -->
@@ -139,7 +204,28 @@
       </address>
     </div>
   </footer>
-
+  <!-- 스와이퍼 슬라이드 스크립트 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".top3", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      speed: 1000, // 슬라이드 전환 속도 (1초)
+      autoplay: {
+        delay: 3000,       // 자동 재생 딜레이
+        disableOnInteraction: false, // 사용자가 조작해도 자동 재생 유지
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
   <!-- 스크롤 이벤트 스크립트 -->
   <script src="./script/jquery.arctic_scroll.js"></script>
   <!-- 
@@ -245,7 +331,7 @@
         let sPos = $(this).scrollTop(); //세로 스크롤 값을 구함
         console.log(sPos); //콘솔모드에 출력
 
-        if (sPos >= 1000) {
+        if (sPos >= 900) {
           //3개 변수값에 .h_txt_color서식을 추가
           gnb.addClass('h_txt_color');
           //헤더에도 .h_on을 추가

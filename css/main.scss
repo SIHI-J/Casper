@@ -1,19 +1,260 @@
+@use 'common' as*;
+$m_value: 80px;
 
-@import 'common';
+main {
+  overflow: hidden;
+  clear: both; //header영역에서 혹시 사용된 float속성이 있다면 float속성해제 한다.
 
-main{
-  overflow:hidden;
-  clear:both;//header영역에서 혹시 사용된 float속성이 있다면 float속성해제 한다.
-  > #movie{
-    height:100vh;
-    background:$line_color_g;
-    > video{width:100%;}
+  >#movie {
+    height: 100vh;
+    background: $line_color_g;
+    overflow: hidden;
+
+    //  영상콘텐츠 안의 내용
+    >.m_info {
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      top: 30%;
+      color: $txt_color2;
+
+      // casper
+      >h2 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 50px;
+        padding-bottom: 50px;
+      }
+
+      // 오직 캐스퍼 온라인에서만 구매하실 수 있습니다.
+      >p {
+        font-size: $t_size_m;
+        padding-bottom: 40px;
+      }
+
+      // 메뉴 서식
+      >a {
+        color: $txt_color2;
+        font-size: $t_size_sm;
+        text-decoration: underline;
+        margin: 0px 20px;
+        padding: 6px 10px;
+      }
+
+      //  첫번째 메뉴 서식
+      >a:first-of-type {
+        background-color: rgba(0, 110, 255, 0.70);
+      }
+    }
+
+    >video {
+      width: 100%;
+    }
+
+    /*다음 페이지도 이동하기 버튼 서식*/
+    @mixin arrow_btn {
+      border-left: 2px solid $txt_color2;
+      border-bottom: 2px solid $txt_color2;
+      transform: rotate(-45deg);
+      width: 16px;
+      height: 16px;
+    }
+
+    >#next_btn {
+      /* 글자 숨기기
+      text-indent: -9999px; 블록요소 일시에만*/
+      display: inline-block;
+      text-indent: -9999px;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include arrow_btn;
+    }
+
   }
-  > #top3{height:1146px;background:cornsilk;}
-  > #intro{height:923px;background:#e9cc58;}
-  > #test_drive{height:923px;background:#9c862c;}
-  > #event{height:923px;background:#635314;}
-  > #buy{height:923px;background:#c59e04;}
-  > #customer{height:923px;background:#a1976e;}
-  
+
+  >#top3 {
+    height: 1146px;
+    // height: 923px;
+    background: cornsilk;
+  }
+
+  >#intro {
+    height: 923px;
+    background: #e9cc58;
+  }
+
+  >#test_drive {
+    height: 923px;
+    background: #9c862c;
+  }
+
+  >#event {
+    height: 923px;
+    background: #635314;
+  }
+
+  >#buy {
+    height: 923px;
+    background: #c59e04;
+  }
+
+  >#customer {
+    height: 923px;
+    background: #a1976e;
+  }
+
+}
+
+//콘텐츠 제목 서식
+@mixin m_title {
+  font-size: $t_size_t3;
+  text-align: center;
+  font-weight: bold;
+  padding: $m_value 0px 10px 0px;
+}
+
+//버튼 서식
+@mixin btn() {
+  border: 1px solid $txt_color2;
+  background: $txt_color2;
+  padding: 8px 26px;
+}
+
+.btn {
+  @include btn;
+}
+
+//top3 , intro, test_drive. event, buy
+.m_title {
+  @include m_title;
+}
+
+/*가장 많이 찾는 캐스퍼 top3*/
+#top3 {
+  text-align: center;
+
+  >.p01 {
+    font-size: $t_size_m;
+    line-height: 50px;
+  }
+
+  /*슬라이드 서식*/
+  .top3 {
+    position: relative;
+    margin-top: 50px;
+    padding: 20px 0px 50px 0px;
+
+    >.swiper-wrapper {
+      width: 100%;
+      height: 100%;
+
+      >.swiper-slide.swiper-slide-active {
+        img {
+          transform: scale(1.5);
+          transition-delay: 0.3s;
+        }
+      }
+
+      >.swiper-slide {
+        .rank {
+          color: #327186;
+          border: 1px solid #327186;
+          padding: 6px 30px;
+          border-radius: 20px;
+          font-size: $t_size_sm;
+        }
+
+        .top3_title {
+          font-size: $t_size_t1;
+          font-weight: 600;
+          padding-top: 30px;
+          color: $txt_color5;
+        }
+
+        img {
+          width: 400px;
+          transition: transform 0.8s ease;
+          transform: scale(0.5);
+          margin: 0 auto;
+          padding: $m_value 0px;
+
+        }
+
+
+        // 디테일 색상 가격 옵션 서식
+        >.detail {
+          // border: 1px solid #f00;
+          display: flex;
+          justify-content: center;
+          padding-bottom: 60px;
+
+          >li {
+            width: 190px;
+            padding: 0px 20px;
+            text-align: left;
+            line-height: 20px;
+            font-size: $t_size_m;
+            border-right: 1px solid $line_color_g;
+          }
+
+          >li:last-child {
+            border: none;
+            padding-top: 6px;
+          }
+
+          .price {
+            font-size: $t_size_t1;
+            font-weight: bold;
+            color: $txt_color5;
+          }
+        }
+      }
+    }
+
+
+    .swiper-pagination-bullet {
+      width: 80px;
+      height: 20px;
+      border-radius: 0;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #000;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #327186;
+    }
+  }
+}
+
+.outer_color,
+.inner_color {
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+  float: left;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.kaki {
+  background: #494b3e;
+}
+
+.black {
+  background: #000;
+}
+
+.white {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.orange {
+  background: rgb(190, 86, 00);
 }

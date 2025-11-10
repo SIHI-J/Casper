@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 body {
   font-family: "Noto Sans KR", sans-serif;
@@ -12,7 +13,9 @@ a {
   text-decoration: none;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
   list-style: none;
 }
 
@@ -184,32 +187,39 @@ footer address {
   color: #ccc;
   padding-left: 170px;
 }
-footer address dt, footer address dd {
+footer address dt,
+footer address dd {
   display: inline-block;
   margin-right: 10px;
-}/*# sourceMappingURL=layout.css.map */
-
-
+}
 
 /* 모달서식 */
-.modal{
-  background-color:rgba(0,0,0,.7);
-  width:100%;height:100%;
-  position:fixed;top:0px;left:0px;
-  text-align:center;
-  z-index:1000;
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  z-index: 1000;
 }
-.modal img{padding-top:10%;}
-.modal p{
-  width:450px;
-  margin:0px auto;
-  line-height:50px;
-  background-color:rgb(238, 238, 238);
-  font-size:14px;
-  text-align:left;
+
+.modal img {
+  padding-top: 10%;
 }
-.modal #c_btn{
-  border:none;
-  transform:translateX(240px);
-  font-size:16px;
+
+.modal p {
+  width: 450px;
+  margin: 0px auto;
+  line-height: 50px;
+  background-color: rgb(238, 238, 238);
+  font-size: 14px;
+  text-align: left;
 }
+
+.modal #c_btn {
+  border: none;
+  transform: translateX(240px);
+  font-size: 16px;
+}/*# sourceMappingURL=layout.css.map */
