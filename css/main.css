@@ -86,26 +86,6 @@ main > #movie > #next_btn {
   width: 16px;
   height: 16px;
 }
-main > #top3 {
-  height: 1146px;
-  background: cornsilk;
-}
-main > #intro {
-  height: 923px;
-  background: #e9cc58;
-}
-main > #test_drive {
-  height: 923px;
-  background: #9c862c;
-}
-main > #event {
-  height: 923px;
-  background: #635314;
-}
-main > #buy {
-  height: 923px;
-  background: #c59e04;
-}
 main > #customer {
   height: 923px;
   background: #a1976e;
@@ -126,6 +106,7 @@ main > #customer {
 
 /*가장 많이 찾는 캐스퍼 top3*/
 #top3 {
+  height: 1000px;
   text-align: center;
   /*슬라이드 서식*/
 }
@@ -144,7 +125,7 @@ main > #customer {
 }
 #top3 .top3 > .swiper-wrapper > .swiper-slide.swiper-slide-active img {
   transform: scale(1.5);
-  transition-delay: 0.3s;
+  transition-delay: 0.4s;
 }
 #top3 .top3 > .swiper-wrapper > .swiper-slide .rank {
   color: #327186;
@@ -161,7 +142,7 @@ main > #customer {
 }
 #top3 .top3 > .swiper-wrapper > .swiper-slide img {
   width: 400px;
-  transition: transform 0.8s ease;
+  transition: transform 0.5s ease;
   transform: scale(0.5);
   margin: 0 auto;
   padding: 80px 0px;
@@ -190,11 +171,11 @@ main > #customer {
 }
 #top3 .top3 .swiper-pagination-bullet {
   width: 80px;
-  height: 20px;
-  border-radius: 0;
+  height: 10px;
+  border-radius: 5px;
 }
 #top3 .top3 .swiper-pagination-bullet-active {
-  background-color: #000;
+  background-color: #327186;
 }
 #top3 .top3 .swiper-button-next,
 #top3 .top3 .swiper-button-prev {
@@ -227,4 +208,188 @@ main > #customer {
 
 .orange {
   background: rgb(190, 86, 0);
+}
+
+/*3. 소개 페이지*/
+#intro {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: #cafdff;
+}
+#intro > .intro_title_left,
+#intro > .intro_title_right {
+  position: absolute;
+  z-index: 100;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 40px;
+}
+#intro > .intro_title_left {
+  top: 200px;
+  left: -320px;
+}
+#intro > .intro_title_right {
+  bottom: 200px;
+  right: -300px;
+  text-align: right;
+}
+#intro .m_title {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+#intro video {
+  width: 100%;
+  position: relative;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+#intro .btn {
+  position: absolute;
+  z-index: 200;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*4. 시승신청 체험*/
+#test_drive {
+  text-align: center;
+  height: 100vh;
+}
+#test_drive > .p01 {
+  font-size: 14px;
+}
+#test_drive > article {
+  width: 430px;
+  height: 280px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 140px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#test_drive > article h3 {
+  font-size: 24px;
+  padding-top: 20px;
+  font-weight: bold;
+  line-height: 40px;
+}
+#test_drive > article > p {
+  padding: 20px 0px;
+  line-height: 22px;
+  margin-bottom: 30px;
+}
+#test_drive > article .mid {
+  transform: translateY(50px);
+}
+#test_drive .test_drive_right .mid {
+  transform: translateY(64px);
+}
+
+.test_drive_btn1 {
+  padding: 10px 60px;
+  color: #fff;
+  background: #225499;
+  line-height: 30px;
+}
+
+.test_drive_btn2 {
+  display: block;
+  position: relative;
+  top: 20px;
+  color: #00B3FF;
+  font-weight: 450;
+}
+
+/*5. 이벤트 콘텐츠 서식*/
+#event {
+  text-align: center;
+  background: #ccc;
+  height: 100vh;
+}
+#event > .p01 {
+  font-size: 14px;
+}
+#event > .event_slide {
+  margin-top: 100px;
+  width: 70%;
+  height: 500px;
+}
+#event > .event_slide img {
+  width: 100%;
+  height: 333.5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+#event > .event_slide .swiper-pagination {
+  position: absolute;
+  /* Swiper 기본값 */
+  bottom: 120px;
+  /* 슬라이드 안쪽 아래로 고정 */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  transform: none;
+  /* translateY 제거 */
+}
+#event > .event_slide .swiper-pagination-bullet {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+}
+#event > .event_slide .swiper-pagination-bullet-active {
+  background-color: #327186;
+  width: 90px;
+  height: 16px;
+  border-radius: 20px;
+}
+
+/*6. 구매하기*/
+#buy {
+  height: 100vh;
+  text-align: center;
+}
+#buy > .p01 {
+  font-size: 14px;
+}
+#buy > h3 {
+  margin-top: 100px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+#buy > h3 span {
+  color: #327186;
+}
+#buy > .buy_inner {
+  width: 60%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 가로 3칸 */
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+#buy > .buy_inner > .buy_info {
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+#buy > .buy_inner > .buy_info > h4 {
+  margin: 30px auto;
+  font-weight: 500;
+}
+#buy > .buy_inner > .buy_info > img {
+  width: 20%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#buy > .buy_inner > .buy_info > .p02 {
+  font-size: 14px;
+  margin: 20px auto;
 }/*# sourceMappingURL=main.css.map */
