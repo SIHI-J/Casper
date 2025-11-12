@@ -347,7 +347,7 @@ main {
 /*5. 이벤트 콘텐츠 서식*/
 #event {
   text-align: center;
-  background: $line_color_g;
+  background: $bg_color_lg;
   height: 100vh;
 
   >.p01 {
@@ -585,6 +585,9 @@ main {
 
       a {
         line-height: 36px;
+      }
+
+      .blue {
         color: $nav_color02;
       }
 
@@ -593,16 +596,34 @@ main {
         margin: 10px auto;
       }
 
-      .btn01 {
-        background: $txt_color3;
-        color: $txt_color2;
-        text-align: center;
-        display: inline-block;
-        position: absolute;
-        width: 160px;
-        line-height: 36px;
-        bottom: 20px;
-      }
+    }
+  }
+
+  .btn01 {
+    background: $txt_color3;
+    color: $txt_color2;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    width: 160px;
+    line-height: 36px;
+    bottom: 20px;
+  }
+
+  .ran_banner {
+    width: 60%;
+    margin: 15px auto 0px auto;
+    padding-bottom: 50px;
+    position: relative;
+
+    >img {
+      width: 100%;
+    }
+
+    .btn01 {
+      z-index: 100;
+      left: 50px;
+      bottom: 80px;
     }
   }
 }

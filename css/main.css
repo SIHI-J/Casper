@@ -345,7 +345,7 @@ main > #movie > #next_btn {
 /*5. 이벤트 콘텐츠 서식*/
 #event {
   text-align: center;
-  background: #ccc;
+  background: #ededed;
   height: 100vh;
 }
 #event > .p01 {
@@ -543,13 +543,15 @@ main > #movie > #next_btn {
 }
 #customer .cs_etc > li a {
   line-height: 36px;
+}
+#customer .cs_etc > li .blue {
   color: #006EFF;
 }
 #customer .cs_etc > li img {
   display: block;
   margin: 10px auto;
 }
-#customer .cs_etc > li .btn01 {
+#customer .btn01 {
   background: #225499;
   color: #fff;
   text-align: center;
@@ -558,6 +560,20 @@ main > #movie > #next_btn {
   width: 160px;
   line-height: 36px;
   bottom: 20px;
+}
+#customer .ran_banner {
+  width: 60%;
+  margin: 15px auto 0px auto;
+  padding-bottom: 50px;
+  position: relative;
+}
+#customer .ran_banner > img {
+  width: 100%;
+}
+#customer .ran_banner .btn01 {
+  z-index: 100;
+  left: 50px;
+  bottom: 80px;
 }
 
 .clearfix::after {
