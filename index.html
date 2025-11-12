@@ -325,7 +325,7 @@
         </li>
       </ul>
       <div class="ran_banner">
-        <img src="./images/ran_banner01.jpg" alt="랜덤배너">
+        <img id="randomBanner" src="./images/ran_banner01.jpg" alt="랜덤배너">
         <a href="#" title="구매안내" class="btn01">캐스퍼 구매안내</a>
       </div>
     </section>
@@ -425,6 +425,16 @@
       let gnb = $('.gnb a');
       let h_icon = $('header span.fas');
       let m_nav = $('#m_nav > ul li');
+      const images = [
+        './images/ran_banner01.jpg',
+        './images/ran_banner02.jpg',
+        './images/ran_banner03.jpg'
+      ];
+      // 랜덤 인덱스 생성
+      const randomIndex = Math.floor(Math.random() * images.length);
+
+      // img 태그에 랜덤 이미지 적용
+      $('#randomBanner').attr('src', images[randomIndex]);
 
       //m_nav에 마우스 오버시 가로길이 늘기기
       m_nav.hover(function () {
@@ -432,6 +442,8 @@
       }, function () {
         $(this).removeClass('m_nav_on');
       });
+
+
 
       //2. 사용자가 헤더영역에 마우스 오버시
       $('header').mouseenter(function () {

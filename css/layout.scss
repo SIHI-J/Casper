@@ -96,8 +96,6 @@ header nav .gnb a:hover {
       overflow: hidden;
     }
 
-    >li:first-child {}
-
     >li:nth-child(2) {
       top: 40px;
     }
@@ -167,8 +165,6 @@ footer {
     padding-top: 10px;
     width: 150px;
   }
-
-  .f_lnb {}
 
   .f_lnb>ul {
     display: flex;
