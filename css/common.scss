@@ -3,6 +3,7 @@ $txt_color1: #333;
 $txt_color2: #fff;
 
 $bg_color_g: #1C1A1D;
+$bg_color_lg: #ededed;
 $bg_color_y: #ff0;
 
 $nav_color01: #00B3FF;
@@ -13,6 +14,7 @@ $txt_color4: #3B8BAE;
 $txt_color5: #052B58;
 
 $line_color_g: #ccc;
+
 
 //글자크기 제목, 본문 변수
 $t_size_s: 12px;
@@ -60,3 +62,43 @@ address {
 }
 
 //폼양식에 들어가는 버튼서식, input서식
+/* 모달서식 */
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background: rgba(0, 0, 0, .7);
+  z-index: 1000;
+}
+
+.inner {
+  width: 450px;
+  height: 640px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner img {
+  display: block;
+}
+
+.inner p {
+  background: #fff;
+  line-height: 40px;
+  font-size: 12px;
+  padding: 0px 5px;
+}
+
+.inner #c_btn {
+  border: 1px solid #333;
+  padding: 4px 8px;
+  background: #fff;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-size: 12px;
+}
